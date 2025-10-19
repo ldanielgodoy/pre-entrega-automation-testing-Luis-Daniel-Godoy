@@ -32,10 +32,11 @@ def test_catalago( driver ):
 
 def test_carrito( driver ):
     login_saucedemo(driver)
-    products = driver.find_elements(By.CLASS_NAME, 'inventory_item')
-    assert len(products) > 0
 
     # verificar el titulo pero del html
+    products = driver.find_elements(By.CLASS_NAME, 'inventory_item')
+    assert len(products) > 0
+    
     products[0].find_element(By.TAG_NAME, 'button').click()
 
     #Comprobar si existen productos en la pagina visibles (len())
